@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using ICMWPFUI.Helpers;
 using ICMWPFUI.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -18,10 +19,10 @@ namespace ICMWPFUI
             Initialize();
 
 
-            //ConventionManager.AddElementConvention<PasswordBox>(
-            //PasswordBoxHelper.BoundPasswordProperty,
-            //"Password",
-            //"PasswordChanged");
+            ConventionManager.AddElementConvention<PasswordBox>(
+            PasswordBoxHelper.BoundPasswordProperty,
+            "Password",
+            "PasswordChanged");
         }
 
         protected override void Configure()
@@ -64,6 +65,11 @@ namespace ICMWPFUI
         protected override void OnStartup(object sender, StartupEventArgs e)
         {
             DisplayRootViewFor<ShellViewModel>();
+        }
+
+        protected override void BuildUp(object instance)
+        {
+            _container.BuildUp(instance);
         }
     }
 }
