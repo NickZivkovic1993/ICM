@@ -34,10 +34,10 @@ namespace ICMWPFUI
 
             _container
                 .Singleton<IWindowManager, WindowManager>()
-                .Singleton<IEventAggregator, EventAggregator>();
+                .Singleton<IEventAggregator, EventAggregator>()
                 //.Singleton<ILoggedInUserModel, LoggedInUserModel>()
                 //.Singleton<IConfigHelper, ConfigHelper>()
-                //.Singleton<IAPIHelper, APIHelper>();
+                .Singleton<IAPIHelper, APIHelper>();
 
             //Reflexion (i'm fine with taking performance hit here) since its only a few
             //ViewModels that are going to get used
