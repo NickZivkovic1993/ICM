@@ -26,8 +26,11 @@
         </TextBlock>
 
         <!-- Error Mesage Row -->
-        <TextBlock x:Name="ErrorMessage" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Foreground="Red" MaxWidth="300" TextWrapping="Wrap"  Margin="0 0 0 20" />
-        <!--Visibility ="{Binding IsErrorVisible, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=Collapsed}"-->
+        <TextBlock x:Name="ErrorMessage" 
+                   Visibility ="{Binding IsErrorVisible, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=Collapsed}"
+                   Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Foreground="Red" 
+                   MaxWidth="300" TextWrapping="Wrap"  Margin="0 0 0 20" />
+        <!--binding built into WPF(BooleanToVisibilityConverter) just add to app.xaml-->
         <!-- Username Row -->
         <TextBlock Grid.Row="2" Grid.Column="1" Margin="0 0 5 20">
             Username:
