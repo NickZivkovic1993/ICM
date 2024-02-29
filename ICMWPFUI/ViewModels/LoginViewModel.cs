@@ -1,5 +1,5 @@
 ﻿using Caliburn.Micro;
-using ICMWPFUI.Helpers;
+using ICMWPFUI.Library.Api;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -92,6 +92,8 @@ namespace ICMWPFUI.ViewModels
             {
                 ErrorMessage = "";
                 var result = await _apiHelper.Authenticate(UserName, Password);
+
+                await _apiHelper.GetLoggedInUserInfo(result.Access_Token);
             }
             catch (Exception ex)
             {

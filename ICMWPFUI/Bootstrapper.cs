@@ -1,5 +1,7 @@
 ﻿using Caliburn.Micro;
 using ICMWPFUI.Helpers;
+using ICMWPFUI.Library.Api;
+using ICMWPFUI.Library.Models;
 using ICMWPFUI.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -30,12 +32,12 @@ namespace ICMWPFUI
             // Move to a class of just container configuration?
             //per request not an instance
             _container.Instance(_container);
-                //.PerRequest<IProductEndpoint, ProductEndpoint>();
+            //.PerRequest<IProductEndpoint, ProductEndpoint>();
 
             _container
                 .Singleton<IWindowManager, WindowManager>()
                 .Singleton<IEventAggregator, EventAggregator>()
-                //.Singleton<ILoggedInUserModel, LoggedInUserModel>()
+                .Singleton<ILoggedinUserModel, LoggedinUserModel>()
                 //.Singleton<IConfigHelper, ConfigHelper>()
                 .Singleton<IAPIHelper, APIHelper>();
 
